@@ -6,6 +6,8 @@ const ASSETS = {
   exerciseStructure: "assets/ejercicio-01-estructura.jpeg",
   exerciseDrawing: "assets/ejercicio-01-dibujo.jpeg",
   exerciseModel: "assets/ejercicio-01-maqueta.jpeg",
+  exerciseModelCard: "assets/ejercicio-01-maqueta-4x3.png",
+  exerciseModelHero: "assets/ejercicio-01-maqueta-16x9.png",
   exerciseInterior: "assets/ejercicio-01-interior.jpeg"
 };
 
@@ -74,7 +76,8 @@ const content = {
       number: "01",
       date: "16/09/2026",
       title: "Animales Arquitectos",
-      image: ASSETS.exerciseModel,
+      image: ASSETS.exerciseModelCard,
+      heroImage: ASSETS.exerciseModelHero,
       excerpt: "Representación de un panal de abejas y de la organización de sus celdas.",
       objective: "Reconocer una estructura realizada por un animal.",
       structure: "Panal de abejas.",
@@ -209,7 +212,7 @@ function detail(kind, id) {
     sections = labels.map(label => `${placeholder(`Completa este apartado con tu contenido de “${label.toLowerCase()}”.`) }${label === "Proceso" ? `<div class="process-grid"><figure><img src="${ASSETS.studio}" alt="Espacio para una imagen del proceso"/><figcaption>[Pie de foto del proceso]</figcaption></figure><figure><div class="empty-card">+ Agrega otra fotografía, dibujo o composición</div><figcaption>[Pie de foto]</figcaption></figure></div>` : ""}`);
   }
 
-  return `<article class="page detail"><a class="back" href="#/${kind}">← Volver a ${backLabel}</a><header class="detail-head"><h1 class="detail-title">${item.title}</h1><div class="detail-meta"><span class="eyebrow">${meta}</span><p>${item.date || "[Fecha de entrega]"}</p></div></header><div class="detail-hero"><img src="${item.image}" alt="Imagen principal de ${item.title}" /></div><div class="detail-body"><nav aria-label="Contenido de esta entrada">${labels.map((label, i) => `<a href="#section-${i}">${String(i+1).padStart(2,"0")} — ${label}</a>`).join("")}</nav><div>${labels.map((label, i) => `<section id="section-${i}" class="detail-section"><h2>${label}</h2>${sections[i]}</section>`).join("")}</div></div></article>`;
+  return `<article class="page detail"><a class="back" href="#/${kind}">← Volver a ${backLabel}</a><header class="detail-head"><h1 class="detail-title">${item.title}</h1><div class="detail-meta"><span class="eyebrow">${meta}</span><p>${item.date || "[Fecha de entrega]"}</p></div></header><div class="detail-hero"><img src="${item.heroImage || item.image}" alt="Imagen principal de ${item.title}" /></div><div class="detail-body"><nav aria-label="Contenido de esta entrada">${labels.map((label, i) => `<a href="#section-${i}">${String(i+1).padStart(2,"0")} — ${label}</a>`).join("")}</nav><div>${labels.map((label, i) => `<section id="section-${i}" class="detail-section"><h2>${label}</h2>${sections[i]}</section>`).join("")}</div></div></article>`;
 }
 
 function notFound() {
