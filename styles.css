@@ -121,11 +121,21 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .detail-body nav a { display: block; padding: .6rem 0; border-bottom: 1px solid var(--line); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
 .detail-section { padding-bottom: 4rem; border-bottom: 1px solid var(--line); margin-bottom: 4rem; }
 .detail-section h2 { font: 400 clamp(2.5rem, 5vw, 5rem)/1 var(--serif); margin: 0 0 1.5rem; }
+.detail-section > p, .detail-copy p { max-width: 70ch; font-size: 1.05rem; line-height: 1.75; }
+.detail-copy p + p { margin-top: 1.5rem; }
+.detail-list { margin: 0; padding-left: 1.2rem; max-width: 70ch; }
+.detail-list li { padding: .8rem 0 .8rem .35rem; line-height: 1.55; border-bottom: 1px solid var(--line); }
+.concept-list { margin: 0; max-width: 76ch; }
+.concept-list div { display: grid; grid-template-columns: minmax(150px, .42fr) 1fr; gap: 1.5rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.concept-list dt { font-weight: 600; }
+.concept-list dd { margin: 0; color: var(--muted); line-height: 1.55; }
 .placeholder { color: var(--muted); font-style: italic; border-left: 2px solid var(--accent); padding-left: 1rem; }
 .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
 .process-grid figure { margin: 0; }
 .process-grid img { aspect-ratio: 4/3; }
 .process-grid figcaption { color: var(--muted); font-size: .75rem; margin-top: .5rem; }
+.process-grid--gallery { gap: 2rem 1rem; }
+.process-grid--gallery img { background: var(--paper-2); object-fit: cover; }
 
 .about { padding: clamp(4rem, 8vw, 8rem) var(--pad); }
 .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 6vw; align-items: start; }
@@ -194,6 +204,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   .detail-body { grid-template-columns: 1fr; }
   .detail-body nav { position: static; }
   .process-grid { grid-template-columns: 1fr; }
+  .concept-list div { grid-template-columns: 1fr; gap: .35rem; }
   .about-facts { grid-template-columns: 1fr; }
   .about-facts div:nth-child(odd) { border-right: 0; }
   .site-footer { grid-template-columns: 1fr; }

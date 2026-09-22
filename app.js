@@ -2,19 +2,104 @@ const ASSETS = {
   hero: "assets/hero-architecture.png",
   reading: "assets/reading-still-life.png",
   studio: "assets/studio-process.png",
-  animals: "assets/animales-arquitectos.jpeg"
+  animals: "assets/animales-arquitectos.jpeg",
+  exerciseStructure: "assets/ejercicio-01-estructura.jpeg",
+  exerciseDrawing: "assets/ejercicio-01-dibujo.jpeg",
+  exerciseModel: "assets/ejercicio-01-maqueta.jpeg",
+  exerciseInterior: "assets/ejercicio-01-interior.jpeg"
 };
 
 // Edita este bloque durante el semestre: cada objeto crea automáticamente una tarjeta y su página individual.
 const content = {
   lecturas: [
-    { id: "lectura-01", number: "01", date: "[Fecha]", title: "Animales Arquitectos", author: "Juhani Pallasmaa", image: ASSETS.animals, excerpt: "Espacio para registrar las ideas principales y la interpretación personal de esta lectura." }
+    {
+      id: "lectura-01",
+      number: "01",
+      date: "02/09/2026",
+      title: "Animales Arquitectos",
+      author: "Juhani Pallasmaa",
+      image: ASSETS.animals,
+      excerpt: "Una mirada a las construcciones de los animales y a su capacidad para transformar paisajes y ecosistemas.",
+      information: "El texto explica cómo las estructuras y actividades constructivas de los animales pueden transformar el paisaje y los ecosistemas. Se presentan ejemplos de hormigas, termitas, castores, conejos, ovejas y aves, mostrando que sus construcciones pueden alcanzar grandes escalas y generar cambios importantes en el ambiente.",
+      ideas: [
+        "Los animales pueden modificar significativamente su entorno mediante sus construcciones.",
+        "Las construcciones animales pueden transformar el suelo, la vegetación y los ecosistemas.",
+        "Algunas especies trabajan o interactúan con otras para producir grandes transformaciones en el paisaje.",
+        "Las estructuras animales pueden generar nuevos hábitats y favorecer la biodiversidad.",
+        "La arquitectura animal está relacionada con la adaptación al ambiente y con las necesidades de cada especie."
+      ],
+      concepts: [
+        ["Adaptación ecológica", "capacidad de un organismo para responder y adaptarse a las condiciones de su entorno."],
+        ["Transformación del paisaje", "cambios físicos producidos en un territorio por seres vivos."],
+        ["Hábitat", "espacio que proporciona las condiciones necesarias para que una especie pueda vivir."],
+        ["Biodiversidad", "variedad de especies que existen en un ecosistema."],
+        ["Arquitectura animal", "construcción y modificación del entorno realizada por los animales para satisfacer sus necesidades."]
+      ],
+      interpretation: "Para mí, la lectura muestra que la arquitectura no es exclusiva de los seres humanos, ya que los animales también construyen y transforman su entorno de acuerdo con sus necesidades. Sus estructuras no solo sirven como refugio, sino que pueden modificar todo un ecosistema. Esto permite entender que la arquitectura puede surgir de la adaptación, la necesidad y la relación con el ambiente, algo que también puede servir como inspiración para la arquitectura humana."
+    },
+    {
+      id: "lectura-02",
+      number: "02",
+      date: "16/09/2026",
+      title: "Genius Loci — Paisaje, ambiente y arquitectura",
+      author: "Christian Norberg-Schulz",
+      image: ASSETS.reading,
+      excerpt: "Una lectura sobre la identidad, el carácter y el espíritu del lugar, y sobre cómo la arquitectura puede responder a su entorno.",
+      information: "Según la lectura, el lugar se define como una totalidad concreta que posee una identidad y un carácter propios. Desde este enfoque fenomenológico, la idea del habitar no consiste solamente en ocupar físicamente un espacio, sino en orientarse y sentirse identificado con el ambiente. Para ello, intervienen elementos fundamentales como el paisaje, el asentamiento, el espacio, el carácter, el exterior, el interior, la tierra, el cielo, los límites, la orientación, la identificación y el genius loci. En consecuencia, el propósito de la arquitectura y su relación con el entorno es responder al carácter del lugar y ayudar a convertir un sitio en un lugar significativo, descubriendo y expresando los significados que ya están presentes en el ambiente.",
+      ideas: [
+        "El lugar está formado por espacio y carácter.",
+        "Cada lugar tiene una identidad particular.",
+        "La arquitectura debe relacionarse con las características del lugar.",
+        "Habitar significa poder orientarse y sentirse identificado con un lugar.",
+        "El Genius Loci representa el espíritu o carácter propio de un lugar."
+      ],
+      concepts: [
+        ["Lugar", "espacio con características e identidad."],
+        ["Espacio", "organización física del lugar."],
+        ["Carácter", "cualidades que hacen único a un lugar."],
+        ["Genius Loci", "espíritu o identidad del lugar."],
+        ["Habitar", "relacionarse y sentirse parte de un lugar."],
+        ["Orientación", "saber dónde estamos y cómo ubicarnos."],
+        ["Identificación", "sentir que pertenecemos a un lugar."]
+      ],
+      interpretation: "Para mí, la lectura muestra que la arquitectura no debe pensarse solamente como construir un espacio, sino como crear lugares que tengan identidad y que hagan que las personas se sientan parte de ellos."
+    }
   ],
   reflexiones: [
     { id: "reflexion-guia", number: "01", date: "[Fecha]", title: "[Título de la reflexión]", image: ASSETS.reading, excerpt: "Guía: reemplaza este texto con un fragmento de tu reflexión personal cuando la hayas realizado." }
   ],
   ejercicios: [
-    { id: "ejercicio-guia", number: "01", title: "[Nombre del ejercicio]", image: ASSETS.studio }
+    {
+      id: "ejercicio-01",
+      number: "01",
+      date: "16/09/2026",
+      title: "Animales Arquitectos",
+      image: ASSETS.exerciseModel,
+      excerpt: "Representación de un panal de abejas y de la organización de sus celdas.",
+      objective: "Reconocer una estructura realizada por un animal.",
+      structure: "Panal de abejas.",
+      explanation: "Quise representar un panal de abejas, ya que es una estructura natural creada por estos animales a partir de módulos hexagonales que se repiten. Para hacer la forma del panal utilicé un botellón de agua como base y lo fui cubriendo y moldeando con papel kraft. Después agregué las formas hexagonales tanto por fuera como por dentro utilizando cartón, para representar las celdas que conforman el panal y su organización interna.",
+      gallery: [
+        [ASSETS.exerciseStructure, "Fotografía de la estructura natural"],
+        [ASSETS.exerciseDrawing, "Dibujo del panal"],
+        [ASSETS.exerciseModel, "Maqueta"],
+        [ASSETS.exerciseInterior, "Interior de la maqueta"]
+      ]
+    },
+    {
+      id: "ejercicio-02",
+      number: "02",
+      date: "22/09/2026",
+      title: "El espíritu del lugar",
+      image: ASSETS.studio,
+      excerpt: "Reflexión sobre el espíritu del lugar y su relación con la forma en que habitamos y comprendemos los espacios.",
+      objective: "Realizar un manuscrito sobre la lectura donde se realice una reflexión personal sobre el espíritu del lugar y dibujar nuestra habitación y el recorrido desde la casa a la universidad.",
+      manuscript: [
+        "Para mí, el espíritu del lugar es aquello que hace que un espacio tenga una identidad propia y que lo diferencie de otros. Después de leer a Christian Norberg-Schulz, entendí que un lugar no es solamente un espacio físico, sino que también está relacionado con lo que transmite y con la forma en que las personas lo perciben. Cada lugar tiene características propias que se pueden reconocer en su ambiente, su paisaje, sus formas y sus elementos. Por eso, considero que conocer un lugar antes de intervenirlo es importante, porque la arquitectura debe tener en cuenta lo que ya existe.",
+        "También entendí que el espíritu del lugar está muy relacionado con la manera en que las personas lo habitan. Un espacio puede ser bonito, pero si no permite que las personas se orienten, se identifiquen o se sientan cómodas, puede no llegar a convertirse en un verdadero lugar. Para mí, habitar significa crear una relación con el espacio y sentir que pertenecemos a él. Esto me hace pensar que los recuerdos y las experiencias también influyen en la forma en que percibimos un lugar. Por ejemplo, un espacio puede tener un significado especial para una persona debido a las experiencias que ha vivido allí.",
+        "Como estudiante de arquitectura, esta lectura me hace pensar que diseñar no consiste solamente en crear una construcción, sino en entender el contexto donde esta se va a desarrollar. El espíritu del lugar puede servir como una guía para crear espacios que tengan sentido y que se relacionen con su entorno. Creo que una buena arquitectura debería respetar las características del lugar y, al mismo tiempo, aportar algo nuevo sin perder su identidad. Después de esta lectura, entiendo que la arquitectura también tiene la responsabilidad de crear lugares donde las personas puedan orientarse, identificarse y sentirse parte de ellos."
+      ]
+    }
   ],
   trabajos: [
     { id: "trabajo-final-guia", number: "01", title: "[Nombre del trabajo final]", theme: "[Tema del proyecto]", image: ASSETS.studio }
@@ -71,7 +156,7 @@ function reflections() {
 
 function exercises() {
   return `<article class="page">${pageHead("03 / 05", "Ejercicios de clase", "Una galería del hacer: exploraciones geométricas, composiciones y procesos desarrollados dentro del aula.")}
-    <section class="exercise-gallery">${content.ejercicios.map(item => `<article class="exercise-card"><div class="exercise-visual" data-number="${item.number}"><img src="${item.image}" alt="Espacio visual para ${item.title}" /></div><div class="exercise-copy"><div><span class="eyebrow">Ejercicio ${item.number}</span><h2>${item.title}</h2><p>Agrega aquí una explicación breve del ejercicio, su consigna y el principal hallazgo del proceso.</p></div><a class="arrow-link" href="#/ejercicios/${item.id}">Ver ejercicio ${arrow}</a></div></article>`).join("")}</section>
+    <section class="exercise-gallery">${content.ejercicios.map(item => `<article class="exercise-card"><div class="exercise-visual" data-number="${item.number}"><img src="${item.image}" alt="Imagen del ejercicio ${item.title}" /></div><div class="exercise-copy"><div><span class="eyebrow">Ejercicio ${item.number} · ${item.date}</span><h2>${item.title}</h2><p>${item.excerpt}</p></div><a class="arrow-link" href="#/ejercicios/${item.id}">Ver ejercicio ${arrow}</a></div></article>`).join("")}</section>
   </article>`;
 }
 
@@ -89,10 +174,42 @@ function detail(kind, id) {
   const collection = content[kind];
   const item = collection?.find(entry => entry.id === id);
   if (!item) return notFound();
-  const labels = kind === "lecturas" ? ["Información de la lectura", "Ideas principales", "Conceptos importantes", "Mi interpretación"] : kind === "reflexiones" ? ["Reflexión completa", "Lo que aprendí", "Preguntas abiertas"] : kind === "trabajos" ? ["Descripción", "Concepto", "Proceso", "Resultado final", "Reflexión"] : ["Objetivo", "Proceso", "Resultado", "Explicación", "Reflexión personal"];
   const backLabel = { lecturas: "Lecturas", reflexiones: "Reflexiones", ejercicios: "Ejercicios de clase", trabajos: "Trabajos finales" }[kind];
   const meta = item.author || item.theme || `Ejercicio ${item.number}`;
-  return `<article class="page detail"><a class="back" href="#/${kind}">← Volver a ${backLabel}</a><header class="detail-head"><h1 class="detail-title">${item.title}</h1><div class="detail-meta"><span class="eyebrow">${meta}</span><p>${item.date || "[Fecha de entrega]"}</p></div></header><div class="detail-hero"><img src="${item.image}" alt="Imagen principal de ${item.title}" /></div><div class="detail-body"><nav aria-label="Contenido de esta entrada">${labels.map((label, i) => `<a href="#section-${i}">${String(i+1).padStart(2,"0")} — ${label}</a>`).join("")}</nav><div>${labels.map((label, i) => `<section id="section-${i}" class="detail-section"><h2>${label}</h2>${placeholder(`Completa este apartado con tu contenido de “${label.toLowerCase()}”.`) }${label === "Proceso" ? `<div class="process-grid"><figure><img src="${ASSETS.studio}" alt="Espacio para una imagen del proceso"/><figcaption>[Pie de foto del proceso]</figcaption></figure><figure><div class="empty-card">+ Agrega otra fotografía, dibujo o composición</div><figcaption>[Pie de foto]</figcaption></figure></div>` : ""}</section>`).join("")}</div></div></article>`;
+  let labels;
+  let sections;
+
+  if (kind === "lecturas" && item.information) {
+    labels = ["Información de la lectura", "Ideas principales", "Conceptos importantes", "Mi interpretación"];
+    sections = [
+      `<p>${item.information}</p>`,
+      `<ul class="detail-list">${item.ideas.map(idea => `<li>${idea}</li>`).join("")}</ul>`,
+      `<dl class="concept-list">${item.concepts.map(([term, meaning]) => `<div><dt>${term}</dt><dd>${meaning}</dd></div>`).join("")}</dl>`,
+      `<p>${item.interpretation}</p>`
+    ];
+  } else if (kind === "ejercicios" && item.objective) {
+    if (item.gallery) {
+      labels = ["Objetivo", "Estructura elegida", "Explicación y proceso", "Registro visual"];
+      sections = [
+        `<p>${item.objective}</p>`,
+        `<p>${item.structure}</p>`,
+        `<p>${item.explanation}</p>`,
+        `<div class="process-grid process-grid--gallery">${item.gallery.map(([image, caption]) => `<figure><img src="${image}" alt="${caption}"/><figcaption>${caption}</figcaption></figure>`).join("")}</div>`
+      ];
+    } else {
+      labels = ["Objetivo", "Manuscrito", "Dibujos"];
+      sections = [
+        `<p>${item.objective}</p>`,
+        `<div class="detail-copy">${item.manuscript.map(paragraph => `<p>${paragraph}</p>`).join("")}</div>`,
+        `<div class="empty-card">Espacio preparado para agregar el dibujo de la habitación y el recorrido de la casa a la universidad.</div>`
+      ];
+    }
+  } else {
+    labels = kind === "reflexiones" ? ["Reflexión completa", "Lo que aprendí", "Preguntas abiertas"] : kind === "trabajos" ? ["Descripción", "Concepto", "Proceso", "Resultado final", "Reflexión"] : ["Objetivo", "Proceso", "Resultado", "Explicación", "Reflexión personal"];
+    sections = labels.map(label => `${placeholder(`Completa este apartado con tu contenido de “${label.toLowerCase()}”.`) }${label === "Proceso" ? `<div class="process-grid"><figure><img src="${ASSETS.studio}" alt="Espacio para una imagen del proceso"/><figcaption>[Pie de foto del proceso]</figcaption></figure><figure><div class="empty-card">+ Agrega otra fotografía, dibujo o composición</div><figcaption>[Pie de foto]</figcaption></figure></div>` : ""}`);
+  }
+
+  return `<article class="page detail"><a class="back" href="#/${kind}">← Volver a ${backLabel}</a><header class="detail-head"><h1 class="detail-title">${item.title}</h1><div class="detail-meta"><span class="eyebrow">${meta}</span><p>${item.date || "[Fecha de entrega]"}</p></div></header><div class="detail-hero"><img src="${item.image}" alt="Imagen principal de ${item.title}" /></div><div class="detail-body"><nav aria-label="Contenido de esta entrada">${labels.map((label, i) => `<a href="#section-${i}">${String(i+1).padStart(2,"0")} — ${label}</a>`).join("")}</nav><div>${labels.map((label, i) => `<section id="section-${i}" class="detail-section"><h2>${label}</h2>${sections[i]}</section>`).join("")}</div></div></article>`;
 }
 
 function notFound() {
