@@ -15,6 +15,7 @@ const ASSETS = {
   exerciseInterior: "assets/ejercicio-01-interior.jpeg",
   exerciseTwoCard: "assets/ejercicio-02-portada-4x3.png",
   exerciseTwoHero: "assets/ejercicio-02-portada-16x9.png",
+  exerciseTwoPerspective: "assets/ejercicio-02-perspectiva-casa-universidad.png",
   exerciseTwoRoute: "assets/ejercicio-02-recorrido.png",
   exerciseTwoRoomPerspective: "assets/ejercicio-02-habitacion-perspectiva.png",
   exerciseTwoRoomPlan: "assets/ejercicio-02-habitacion-planta.png"
@@ -111,10 +112,12 @@ const content = {
         "También entendí que el espíritu del lugar está muy relacionado con la manera en que las personas lo habitan. Un espacio puede ser bonito, pero si no permite que las personas se orienten, se identifiquen o se sientan cómodas, puede no llegar a convertirse en un verdadero lugar. Para mí, habitar significa crear una relación con el espacio y sentir que pertenecemos a él. Esto me hace pensar que los recuerdos y las experiencias también influyen en la forma en que percibimos un lugar. Por ejemplo, un espacio puede tener un significado especial para una persona debido a las experiencias que ha vivido allí.",
         "Como estudiante de arquitectura, esta lectura me hace pensar que diseñar no consiste solamente en crear una construcción, sino en entender el contexto donde esta se va a desarrollar. El espíritu del lugar puede servir como una guía para crear espacios que tengan sentido y que se relacionen con su entorno. Creo que una buena arquitectura debería respetar las características del lugar y, al mismo tiempo, aportar algo nuevo sin perder su identidad. Después de esta lectura, entiendo que la arquitectura también tiene la responsabilidad de crear lugares donde las personas puedan orientarse, identificarse y sentirse parte de ellos."
       ],
+      galleryLabel: "Evidencias",
       gallery: [
         [ASSETS.exerciseTwoRoute, "Recorrido desde la casa hasta la universidad"],
         [ASSETS.exerciseTwoRoomPerspective, "Perspectiva de la habitación"],
-        [ASSETS.exerciseTwoRoomPlan, "Planta de la habitación"]
+        [ASSETS.exerciseTwoRoomPlan, "Planta de la habitación"],
+        [ASSETS.exerciseTwoPerspective, "Perspectiva de la casa a la universidad"]
       ]
     }
   ],
@@ -214,7 +217,7 @@ function detail(kind, id) {
       sections.push(`<div class="detail-copy">${item.manuscript.map(paragraph => `<p>${paragraph}</p>`).join("")}</div>`);
     }
     if (item.gallery) {
-      labels.push("Registro visual");
+      labels.push(item.galleryLabel || "Registro visual");
       sections.push(`<div class="process-grid process-grid--gallery">${item.gallery.map(([image, caption]) => `<figure><img src="${image}" alt="${caption}"/><figcaption>${caption}</figcaption></figure>`).join("")}</div>`);
     }
   } else {
