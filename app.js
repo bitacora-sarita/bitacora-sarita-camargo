@@ -12,7 +12,12 @@ const ASSETS = {
   exerciseModel: "assets/ejercicio-01-maqueta.jpeg",
   exerciseModelCard: "assets/ejercicio-01-maqueta-4x3.png",
   exerciseModelHero: "assets/ejercicio-01-maqueta-16x9.png",
-  exerciseInterior: "assets/ejercicio-01-interior.jpeg"
+  exerciseInterior: "assets/ejercicio-01-interior.jpeg",
+  exerciseTwoCard: "assets/ejercicio-02-portada-4x3.png",
+  exerciseTwoHero: "assets/ejercicio-02-portada-16x9.png",
+  exerciseTwoRoute: "assets/ejercicio-02-recorrido.png",
+  exerciseTwoRoomPerspective: "assets/ejercicio-02-habitacion-perspectiva.png",
+  exerciseTwoRoomPlan: "assets/ejercicio-02-habitacion-planta.png"
 };
 
 // Edita este bloque durante el semestre: cada objeto crea automáticamente una tarjeta y su página individual.
@@ -100,13 +105,19 @@ const content = {
       number: "02",
       date: "22/09/2026",
       title: "El espíritu del lugar",
-      image: ASSETS.studio,
+      image: ASSETS.exerciseTwoCard,
+      heroImage: ASSETS.exerciseTwoHero,
       excerpt: "Reflexión sobre el espíritu del lugar y su relación con la forma en que habitamos y comprendemos los espacios.",
       objective: "Realizar un manuscrito sobre la lectura donde se realice una reflexión personal sobre el espíritu del lugar y dibujar nuestra habitación y el recorrido desde la casa a la universidad.",
       manuscript: [
         "Para mí, el espíritu del lugar es aquello que hace que un espacio tenga una identidad propia y que lo diferencie de otros. Después de leer a Christian Norberg-Schulz, entendí que un lugar no es solamente un espacio físico, sino que también está relacionado con lo que transmite y con la forma en que las personas lo perciben. Cada lugar tiene características propias que se pueden reconocer en su ambiente, su paisaje, sus formas y sus elementos. Por eso, considero que conocer un lugar antes de intervenirlo es importante, porque la arquitectura debe tener en cuenta lo que ya existe.",
         "También entendí que el espíritu del lugar está muy relacionado con la manera en que las personas lo habitan. Un espacio puede ser bonito, pero si no permite que las personas se orienten, se identifiquen o se sientan cómodas, puede no llegar a convertirse en un verdadero lugar. Para mí, habitar significa crear una relación con el espacio y sentir que pertenecemos a él. Esto me hace pensar que los recuerdos y las experiencias también influyen en la forma en que percibimos un lugar. Por ejemplo, un espacio puede tener un significado especial para una persona debido a las experiencias que ha vivido allí.",
         "Como estudiante de arquitectura, esta lectura me hace pensar que diseñar no consiste solamente en crear una construcción, sino en entender el contexto donde esta se va a desarrollar. El espíritu del lugar puede servir como una guía para crear espacios que tengan sentido y que se relacionen con su entorno. Creo que una buena arquitectura debería respetar las características del lugar y, al mismo tiempo, aportar algo nuevo sin perder su identidad. Después de esta lectura, entiendo que la arquitectura también tiene la responsabilidad de crear lugares donde las personas puedan orientarse, identificarse y sentirse parte de ellos."
+      ],
+      gallery: [
+        [ASSETS.exerciseTwoRoute, "Recorrido desde la casa hasta la universidad"],
+        [ASSETS.exerciseTwoRoomPerspective, "Perspectiva de la habitación"],
+        [ASSETS.exerciseTwoRoomPlan, "Planta de la habitación"]
       ]
     }
   ],
@@ -197,21 +208,23 @@ function detail(kind, id) {
       `<p>${item.interpretation}</p>`
     ];
   } else if (kind === "ejercicios" && item.objective) {
+    labels = ["Objetivo"];
+    sections = [`<p>${item.objective}</p>`];
+    if (item.structure) {
+      labels.push("Estructura elegida");
+      sections.push(`<p>${item.structure}</p>`);
+    }
+    if (item.explanation) {
+      labels.push("Explicación y proceso");
+      sections.push(`<p>${item.explanation}</p>`);
+    }
+    if (item.manuscript) {
+      labels.push("Manuscrito");
+      sections.push(`<div class="detail-copy">${item.manuscript.map(paragraph => `<p>${paragraph}</p>`).join("")}</div>`);
+    }
     if (item.gallery) {
-      labels = ["Objetivo", "Estructura elegida", "Explicación y proceso", "Registro visual"];
-      sections = [
-        `<p>${item.objective}</p>`,
-        `<p>${item.structure}</p>`,
-        `<p>${item.explanation}</p>`,
-        `<div class="process-grid process-grid--gallery">${item.gallery.map(([image, caption]) => `<figure><img src="${image}" alt="${caption}"/><figcaption>${caption}</figcaption></figure>`).join("")}</div>`
-      ];
-    } else {
-      labels = ["Objetivo", "Manuscrito", "Dibujos"];
-      sections = [
-        `<p>${item.objective}</p>`,
-        `<div class="detail-copy">${item.manuscript.map(paragraph => `<p>${paragraph}</p>`).join("")}</div>`,
-        `<div class="empty-card">Espacio preparado para agregar el dibujo de la habitación y el recorrido de la casa a la universidad.</div>`
-      ];
+      labels.push("Registro visual");
+      sections.push(`<div class="process-grid process-grid--gallery">${item.gallery.map(([image, caption]) => `<figure><img src="${image}" alt="${caption}"/><figcaption>${caption}</figcaption></figure>`).join("")}</div>`);
     }
   } else {
     labels = kind === "reflexiones" ? ["Reflexión completa", "Lo que aprendí", "Preguntas abiertas"] : kind === "trabajos" ? ["Descripción", "Concepto", "Proceso", "Resultado final", "Reflexión"] : ["Objetivo", "Proceso", "Resultado", "Explicación", "Reflexión personal"];
