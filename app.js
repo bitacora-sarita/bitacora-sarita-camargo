@@ -129,6 +129,61 @@ const content = {
 const app = document.querySelector("#app");
 const nav = document.querySelector("#main-nav");
 const toggle = document.querySelector(".menu-toggle");
+const imageViewer = document.querySelector("#image-viewer");
+const viewerPhoto = document.querySelector("#image-viewer-photo");
+const viewerTitle = document.querySelector("#image-viewer-title");
+const viewerDownload = document.querySelector("#image-viewer-download");
+let viewerTrigger = null;
+
+// Las imágenes nuevas también reciben el visor automáticamente, excepto en Inicio.
+function enableImageViewer(section) {
+  if (section === "inicio") return;
+  app.querySelectorAll("img").forEach(photo => {
+    const caption = photo.closest("figure")?.querySelector("figcaption")?.textContent.trim() || photo.alt || "Imagen";
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "image-trigger";
+    button.setAttribute("aria-label", `Ver imagen completa: ${caption}`);
+    button.setAttribute("aria-haspopup", "dialog");
+    button.title = "Ver imagen completa";
+    button.dataset.caption = caption;
+    photo.before(button);
+    button.append(photo);
+  });
+}
+
+app.addEventListener("click", event => {
+  const button = event.target.closest(".image-trigger");
+  if (!button || !app.contains(button)) return;
+  const photo = button.querySelector("img");
+  const source = photo.currentSrc || photo.src;
+  viewerTrigger = button;
+  viewerPhoto.src = source;
+  viewerPhoto.alt = photo.alt || button.dataset.caption;
+  viewerTitle.textContent = button.dataset.caption;
+  viewerDownload.href = source;
+  viewerDownload.download = decodeURIComponent(new URL(source).pathname.split("/").pop());
+  imageViewer.showModal();
+  document.body.classList.add("image-viewer-open");
+});
+
+document.querySelector("#image-viewer-close").addEventListener("click", () => imageViewer.close());
+
+imageViewer.addEventListener("click", event => {
+  if (event.target !== imageViewer) return;
+  const bounds = imageViewer.getBoundingClientRect();
+  if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) {
+    imageViewer.close();
+  }
+});
+
+imageViewer.addEventListener("close", () => {
+  document.body.classList.remove("image-viewer-open");
+  viewerPhoto.removeAttribute("src");
+  viewerDownload.removeAttribute("href");
+  if (viewerTrigger?.isConnected) viewerTrigger.focus({ preventScroll: true });
+  viewerTrigger = null;
+});
 
 toggle.addEventListener("click", () => {
   const isOpen = nav.classList.toggle("open");
@@ -233,11 +288,13 @@ function notFound() {
 }
 
 function render() {
+  if (imageViewer.open) imageViewer.close();
   const route = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
   const section = route[0] || "inicio";
   const id = route[1];
   const pages = { inicio: home, lecturas: readings, ejercicios: exercises, trabajos: finals, "sobre-mi": about };
   app.innerHTML = id ? detail(section, id) : (pages[section] || notFound)();
+  enableImageViewer(section);
   document.querySelectorAll(".main-nav a").forEach(link => link.classList.toggle("active", link.getAttribute("href") === `#/${section}`));
   window.scrollTo({ top: 0, behavior: "instant" });
   app.focus({ preventScroll: true });

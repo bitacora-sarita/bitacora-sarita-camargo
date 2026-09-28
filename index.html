@@ -35,6 +35,17 @@
     <p class="footer-meta">Sarita Camargo Prado · Semestre 1 · Grupo 02</p>
   </footer>
 
+  <dialog id="image-viewer" class="image-viewer" aria-labelledby="image-viewer-title">
+    <div class="image-viewer-toolbar">
+      <p id="image-viewer-title">Vista completa de la imagen</p>
+      <div class="image-viewer-actions">
+        <a id="image-viewer-download" class="viewer-control" download>Descargar imagen</a>
+        <button id="image-viewer-close" class="viewer-control" type="button" autofocus>Cerrar <span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+    <div class="image-viewer-stage"><img id="image-viewer-photo" alt="" /></div>
+  </dialog>
+
   <script src="app.js"></script>
 </body>
 </html>
