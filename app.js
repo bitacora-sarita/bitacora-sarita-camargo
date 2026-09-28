@@ -2,6 +2,7 @@ const ASSETS = {
   hero: "assets/hero-architecture.png",
   reading: "assets/reading-still-life.png",
   studio: "assets/studio-process.png",
+  portrait: "assets/sarita-camargo-prado.jpg",
   animals: "assets/animales-arquitectos.jpeg",
   readingOneCard: "assets/lectura-01-animales-arquitectos-4x3.png",
   readingOneHero: "assets/lectura-01-animales-arquitectos-16x9.png",
@@ -236,7 +237,7 @@ function finals() {
 }
 
 function about() {
-  return `<article class="page about"><div class="about-grid"><div class="portrait-placeholder"><strong>SC</strong><span>Espacio para la fotografía de Sarita</span></div><div class="about-copy"><span class="eyebrow">04 / 04 · Sobre mí</span><h1>Sarita Camargo Prado</h1><p class="lead">Soy estudiante de Arquitectura de primer semestre en la Universidad Tolima. Esta bitácora acompaña mi acercamiento a la teoría y la historia de la disciplina.</p>${placeholder("Espacio para que Sarita agregue una presentación personal sobre sus motivaciones para estudiar Arquitectura.")}<div class="about-facts"><div><span>Programa</span>Arquitectura</div><div><span>Materia</span>Teoría e Historia de la Arquitectura</div><div><span>Universidad</span>Universidad Tolima</div><div><span>Semestre / Grupo</span>Semestre 1 · Grupo 02</div></div></div></div></article>`;
+  return `<article class="page about"><div class="about-grid"><div class="portrait"><img src="${ASSETS.portrait}" alt="Retrato de Sarita Camargo Prado" width="896" height="1195" /></div><div class="about-copy"><span class="eyebrow">04 / 04 · Sobre mí</span><h1>Sarita Camargo Prado</h1><p class="lead">Soy estudiante de Arquitectura de primer semestre en la Universidad Tolima. Esta bitácora acompaña mi acercamiento a la teoría y la historia de la disciplina.</p>${placeholder("Espacio para que Sarita agregue una presentación personal sobre sus motivaciones para estudiar Arquitectura.")}<div class="about-facts"><div><span>Programa</span>Arquitectura</div><div><span>Materia</span>Teoría e Historia de la Arquitectura</div><div><span>Universidad</span>Universidad Tolima</div><div><span>Semestre / Grupo</span>Semestre 1 · Grupo 02</div></div></div></div></article>`;
 }
 
 function detail(kind, id) {
