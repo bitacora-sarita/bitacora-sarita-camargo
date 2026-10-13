@@ -124,6 +124,9 @@ body.image-viewer-open { overflow: hidden; }
 .detail-title { margin: 0; font: 400 clamp(4rem, 9vw, 9rem)/.82 var(--serif); letter-spacing: -.03em; }
 .detail-meta { padding-top: 1rem; border-top: 1px solid; color: var(--muted); }
 .detail-hero { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; }
+.image-frame--complete { background: #fff; }
+.image-frame--complete img { object-fit: contain; filter: none; }
+.entry-card:hover .image-frame--complete img { transform: none; }
 .detail-body { display: grid; grid-template-columns: .65fr 1.35fr; gap: 6vw; padding: 5rem 0; }
 .detail-body nav { position: sticky; top: 110px; align-self: start; }
 .detail-body nav a { display: block; padding: .6rem 0; border-bottom: 1px solid var(--line); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }

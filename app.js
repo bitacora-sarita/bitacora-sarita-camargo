@@ -8,6 +8,7 @@ const ASSETS = {
   readingOneHero: "assets/lectura-01-animales-arquitectos-16x9.png",
   readingTwoCard: "assets/lectura-02-genius-loci-4x3.png",
   readingTwoHero: "assets/lectura-02-genius-loci-16x9.png",
+  readingThree: "assets/lectura-03-arquitectura-de-la-ciudad.jpeg",
   exerciseStructure: "assets/ejercicio-01-estructura.jpeg",
   exerciseDrawing: "assets/ejercicio-01-dibujo.jpeg",
   exerciseModel: "assets/ejercicio-01-maqueta.jpeg",
@@ -78,6 +79,45 @@ const content = {
         ["Identificación", "sentir que pertenecemos a un lugar."]
       ],
       interpretation: "Para mí, la lectura muestra que la arquitectura no debe pensarse solamente como construir un espacio, sino como crear lugares que tengan identidad y que hagan que las personas se sientan parte de ellos."
+    },
+    {
+      id: "lectura-03",
+      number: "03",
+      date: "07/10/2026",
+      title: "La arquitectura de la ciudad",
+      author: "Aldo Rossi",
+      image: ASSETS.readingThree,
+      heroImage: ASSETS.readingThree,
+      imageFit: "contain",
+      ideasNumbered: true,
+      excerpt: "La ciudad como una construcción arquitectónica, histórica y colectiva que se transforma a lo largo del tiempo.",
+      information: "Según la lectura, la ciudad se entiende como una construcción arquitectónica, histórica y colectiva que se transforma a lo largo del tiempo. Desde este enfoque, la arquitectura no consiste solamente en diseñar edificios, sino también en crear espacios que respondan a las necesidades de las personas y reflejen la identidad de la sociedad. Para comprender la ciudad, intervienen elementos fundamentales como los hechos urbanos, los monumentos, las viviendas, los espacios públicos y privados, la historia, la cultura y las características propias de cada lugar. Asimismo, la relación entre el individuo y la colectividad permite entender cómo las personas construyen y transforman su entorno. En consecuencia, el propósito de la arquitectura y del urbanismo es estudiar la ciudad de manera integral, reconociendo los elementos que permanecen en el tiempo y los cambios que experimenta, para comprender su organización, conservar su memoria y contribuir a su desarrollo.",
+      ideas: [
+        "La ciudad como construcción arquitectónica: la ciudad no es únicamente un conjunto de edificios, sino una obra colectiva que evoluciona con el tiempo.",
+        "La arquitectura y la sociedad: la arquitectura responde a las necesidades humanas y refleja las costumbres, los valores y la organización de una comunidad.",
+        "La relación entre lo individual y lo colectivo: en la ciudad se relacionan las necesidades de cada persona con los intereses de la sociedad, mediante los espacios privados y públicos.",
+        "La importancia de la historia: conocer el origen y las transformaciones de una ciudad permite comprender su identidad y su estructura actual.",
+        "Los hechos urbanos particulares: cada ciudad tiene características propias que deben estudiarse antes de establecer teorías o proponer intervenciones urbanísticas.",
+        "Los monumentos y la memoria colectiva: los monumentos representan la historia y los valores de una sociedad, y funcionan como elementos significativos dentro de la ciudad.",
+        "La transformación urbana: las ciudades cambian por procesos sociales, económicos y políticos que modifican sus construcciones, sus usos y su organización.",
+        "La necesidad de una teoría urbana integral: para comprender la ciudad es necesario combinar métodos históricos, comparativos y arquitectónicos, sin limitarse a una sola perspectiva."
+      ],
+      concepts: [
+        ["Hechos urbanos", "son los elementos y fenómenos que conforman la ciudad, como edificios, calles, viviendas, barrios y monumentos. Su análisis permite comprender la organización y evolución urbana."],
+        ["Arquitectura de la ciudad", "es la comprensión de la ciudad como una construcción colectiva que expresa las relaciones entre el espacio, la sociedad y el tiempo."],
+        ["Esfera pública y esfera privada", "la esfera pública comprende espacios compartidos, como calles, plazas y parques; la esfera privada incluye lugares de uso particular, como las viviendas. Ambas forman parte de la estructura urbana."],
+        ["Monumentos urbanos", "son construcciones que representan la memoria histórica y la identidad de una comunidad, y que pueden permanecer como referencias importantes a lo largo del tiempo."],
+        ["Permanencias urbanas", "son los elementos que continúan existiendo a pesar de las transformaciones de la ciudad, como ciertas calles, edificios históricos y monumentos."],
+        ["Dinámica urbana", "es el proceso de cambio y desarrollo de la ciudad como resultado de factores sociales, económicos, políticos y arquitectónicos."],
+        ["Locus", "es el lugar concreto donde se desarrolla una construcción o un hecho urbano, cuyas características físicas, históricas y culturales influyen en su significado."],
+        ["Teoría urbana", "es el conjunto de principios, conceptos y métodos que permiten estudiar la ciudad, comprender su estructura y explicar su evolución."]
+      ],
+      interpretation: [
+        "Considero que esta lectura me permite comprender que la ciudad es mucho más que un conjunto de edificios y calles, porque representa la historia, las experiencias y las necesidades de las personas que la habitan. Entiendo que la arquitectura tiene una responsabilidad importante, ya que los espacios que se diseñan influyen en la manera en que las personas viven, se relacionan y se sienten dentro de su entorno.",
+        "También interpreto que cada ciudad tiene una identidad propia, determinada por su historia, su ubicación y sus características sociales y culturales. Por eso, antes de proponer una intervención arquitectónica, es importante conocer el lugar, reconocer sus elementos significativos y comprender las necesidades de sus habitantes.",
+        "Me parece importante la idea de que algunos elementos urbanos permanezcan en el tiempo, porque ayudan a conservar la memoria colectiva, mientras que otros se transforman para responder a nuevas necesidades. Esto demuestra que la arquitectura debe encontrar un equilibrio entre conservar el pasado y permitir el desarrollo de la ciudad.",
+        "En conclusión, entiendo que estudiar la ciudad desde la arquitectura significa analizarla como un sistema en el que se relacionan el espacio, el tiempo y la sociedad. Como estudiante de arquitectura, considero que este conocimiento es fundamental para diseñar espacios que no solo sean funcionales y estéticos, sino que también respeten la identidad del lugar y contribuyan al bienestar de las personas."
+      ]
     }
   ],
   ejercicios: [
@@ -220,7 +260,7 @@ function home() {
 
 function readings() {
   return `<article class="page">${pageHead("01 / 04", "Lecturas", "Un archivo de los textos trabajados durante el semestre: sus ideas principales, conceptos y las interpretaciones que construyo a partir de ellos.")}
-    <section class="archive"><div class="card-grid">${content.lecturas.map(item => `<article class="entry-card"><div class="entry-image"><img src="${item.image}" alt="Imagen editorial para ${item.title}" /></div><div class="entry-meta"><span>Lectura ${item.number}</span><span>${item.date}</span></div><h2>${item.title}</h2><span class="eyebrow">${item.author}</span><p>${item.excerpt}</p><a class="text-link" href="#/lecturas/${item.id}">Leer más →</a></article>`).join("")}</div></section>
+    <section class="archive"><div class="card-grid">${content.lecturas.map(item => `<article class="entry-card"><div class="entry-image${item.imageFit === "contain" ? " image-frame--complete" : ""}"><img src="${item.image}" alt="Imagen editorial para ${item.title}" /></div><div class="entry-meta"><span>Lectura ${item.number}</span><span>${item.date}</span></div><h2>${item.title}</h2><span class="eyebrow">${item.author}</span><p>${item.excerpt}</p><a class="text-link" href="#/lecturas/${item.id}">Leer más →</a></article>`).join("")}</div></section>
   </article>`;
 }
 
@@ -253,9 +293,9 @@ function detail(kind, id) {
     labels = ["Información de la lectura", "Ideas principales", "Conceptos importantes", "Mi interpretación"];
     sections = [
       `<p>${item.information}</p>`,
-      `<ul class="detail-list">${item.ideas.map(idea => `<li>${idea}</li>`).join("")}</ul>`,
+      `<${item.ideasNumbered ? "ol" : "ul"} class="detail-list">${item.ideas.map(idea => `<li>${idea}</li>`).join("")}</${item.ideasNumbered ? "ol" : "ul"}>`,
       `<dl class="concept-list">${item.concepts.map(([term, meaning]) => `<div><dt>${term}</dt><dd>${meaning}</dd></div>`).join("")}</dl>`,
-      `<p>${item.interpretation}</p>`
+      `<div class="detail-copy">${(Array.isArray(item.interpretation) ? item.interpretation : [item.interpretation]).map(paragraph => `<p>${paragraph}</p>`).join("")}</div>`
     ];
   } else if (kind === "ejercicios" && item.objective) {
     labels = ["Objetivo"];
@@ -281,7 +321,7 @@ function detail(kind, id) {
     sections = labels.map(label => `${placeholder(`Completa este apartado con tu contenido de “${label.toLowerCase()}”.`) }${label === "Proceso" ? `<div class="process-grid"><figure><img src="${ASSETS.studio}" alt="Espacio para una imagen del proceso"/><figcaption>[Pie de foto del proceso]</figcaption></figure><figure><div class="empty-card">+ Agrega otra fotografía, dibujo o composición</div><figcaption>[Pie de foto]</figcaption></figure></div>` : ""}`);
   }
 
-  return `<article class="page detail"><a class="back" href="#/${kind}">← Volver a ${backLabel}</a><header class="detail-head"><h1 class="detail-title">${item.title}</h1><div class="detail-meta"><span class="eyebrow">${meta}</span><p>${item.date || "[Fecha de entrega]"}</p></div></header><div class="detail-hero"><img src="${item.heroImage || item.image}" alt="Imagen principal de ${item.title}" /></div><div class="detail-body"><nav aria-label="Contenido de esta entrada">${labels.map((label, i) => `<a href="#section-${i}">${String(i+1).padStart(2,"0")} — ${label}</a>`).join("")}</nav><div>${labels.map((label, i) => `<section id="section-${i}" class="detail-section"><h2>${label}</h2>${sections[i]}</section>`).join("")}</div></div></article>`;
+  return `<article class="page detail"><a class="back" href="#/${kind}">← Volver a ${backLabel}</a><header class="detail-head"><h1 class="detail-title">${item.title}</h1><div class="detail-meta"><span class="eyebrow">${meta}</span><p>${item.date || "[Fecha de entrega]"}</p></div></header><div class="detail-hero${item.imageFit === "contain" ? " image-frame--complete" : ""}"><img src="${item.heroImage || item.image}" alt="Imagen principal de ${item.title}" /></div><div class="detail-body"><nav aria-label="Contenido de esta entrada">${labels.map((label, i) => `<a href="#section-${i}">${String(i+1).padStart(2,"0")} — ${label}</a>`).join("")}</nav><div>${labels.map((label, i) => `<section id="section-${i}" class="detail-section"><h2>${label}</h2>${sections[i]}</section>`).join("")}</div></div></article>`;
 }
 
 function notFound() {
