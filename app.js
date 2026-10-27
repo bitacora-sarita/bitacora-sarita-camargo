@@ -9,6 +9,7 @@ const ASSETS = {
   readingTwoCard: "assets/lectura-02-genius-loci-4x3.png",
   readingTwoHero: "assets/lectura-02-genius-loci-16x9.png",
   readingThree: "assets/lectura-03-arquitectura-de-la-ciudad.jpeg",
+  readingFour: "assets/lectura-04-arquitectura-sin-arquitectos.jpeg",
   exerciseStructure: "assets/ejercicio-01-estructura.jpeg",
   exerciseDrawing: "assets/ejercicio-01-dibujo.jpeg",
   exerciseModel: "assets/ejercicio-01-maqueta.jpeg",
@@ -118,6 +119,34 @@ const content = {
         "Me parece importante la idea de que algunos elementos urbanos permanezcan en el tiempo, porque ayudan a conservar la memoria colectiva, mientras que otros se transforman para responder a nuevas necesidades. Esto demuestra que la arquitectura debe encontrar un equilibrio entre conservar el pasado y permitir el desarrollo de la ciudad.",
         "En conclusión, entiendo que estudiar la ciudad desde la arquitectura significa analizarla como un sistema en el que se relacionan el espacio, el tiempo y la sociedad. Como estudiante de arquitectura, considero que este conocimiento es fundamental para diseñar espacios que no solo sean funcionales y estéticos, sino que también respeten la identidad del lugar y contribuyan al bienestar de las personas."
       ]
+    },
+    {
+      id: "lectura-04",
+      number: "04",
+      date: "20/10/2026",
+      title: "Arquitectura sin arquitectos",
+      author: "Bernard Rudofsky",
+      image: ASSETS.readingFour,
+      heroImage: ASSETS.readingFour,
+      imageFit: "contain",
+      excerpt: "La arquitectura como expresión de las necesidades humanas, la cultura y la relación de las comunidades con su entorno.",
+      information: "Según la lectura Arquitectura sin arquitectos, de Bernard Rudofsky, la arquitectura se entiende como una expresión de las necesidades humanas, la cultura y la relación entre las comunidades y su entorno. Desde este enfoque, construir no depende exclusivamente de arquitectos profesionales, sino también de los conocimientos tradicionales que las personas desarrollan y transmiten a través del tiempo. Para comprender estas construcciones, es importante reconocer elementos como los materiales locales, el clima, el relieve, las costumbres y las formas de organización de cada sociedad. Asimismo, la arquitectura vernácula demuestra cómo las comunidades crean espacios funcionales y adaptados a sus condiciones de vida. En consecuencia, el propósito del autor es destacar el valor de estas construcciones, ampliar la visión tradicional de la historia de la arquitectura y reconocer la importancia de las soluciones arquitectónicas creadas por las propias comunidades.",
+      ideas: [
+        "La arquitectura va más allá de los arquitectos: las comunidades también desarrollan soluciones constructivas a partir de sus experiencias y conocimientos.",
+        "Adaptación al entorno: las construcciones tradicionales responden al clima, al terreno y a los materiales disponibles en cada lugar.",
+        "Relación entre arquitectura y cultura: las viviendas reflejan las costumbres, las necesidades y las formas de vida de sus habitantes.",
+        "Valor de la arquitectura popular: estas construcciones poseen importancia funcional, histórica y estética, aunque no siempre sean reconocidas por la arquitectura académica.",
+        "Importancia de la comunidad: la experiencia colectiva permite crear espacios que responden a las condiciones particulares de cada sociedad."
+      ],
+      concepts: [
+        ["Arquitectura vernácula", "construcciones tradicionales desarrolladas por las comunidades mediante conocimientos transmitidos entre generaciones."],
+        ["Arquitectura sin genealogía", "perspectiva que busca reconocer formas de arquitectura que quedan fuera de los relatos históricos convencionales."],
+        ["Adaptación al entorno", "relación entre las características de una construcción y las condiciones naturales del lugar."],
+        ["Conocimiento tradicional", "saberes y técnicas constructivas que se desarrollan mediante la experiencia y se transmiten a lo largo del tiempo."],
+        ["Identidad cultural", "características y costumbres de una comunidad que se reflejan en sus espacios y construcciones."],
+        ["Funcionalidad", "capacidad de la arquitectura para responder a las necesidades cotidianas de las personas."]
+      ],
+      interpretation: "Considero que Arquitectura sin arquitectos nos invita a reconocer que la arquitectura no se limita al diseño de edificios realizados por profesionales, sino que también surge de la creatividad, la experiencia y las necesidades de las comunidades. Desde mi perspectiva como estudiante de arquitectura, considero importante observar cómo las construcciones tradicionales aprovechan los materiales disponibles y se adaptan al clima y al terreno. Esto demuestra que una buena solución arquitectónica no depende únicamente de la apariencia, sino también de su funcionalidad y de su relación con el contexto. Además, la lectura me permite comprender la importancia de valorar la identidad cultural de cada lugar y aprender de las técnicas constructivas tradicionales. Por ello, pienso que la arquitectura debe integrar el conocimiento técnico con las necesidades humanas, respetando tanto el entorno natural como las costumbres de quienes habitan los espacios."
     }
   ],
   ejercicios: [
