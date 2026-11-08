@@ -12,6 +12,8 @@ const ASSETS = {
   readingFour: "assets/lectura-04-arquitectura-sin-arquitectos.jpeg",
   readingFourCard: "assets/lectura-04-arquitectura-sin-arquitectos-4x3.png",
   readingFourHero: "assets/lectura-04-arquitectura-sin-arquitectos-16x9.png",
+  readingFiveCard: "assets/lectura-05-manual-de-conceptos-4x3.jpg",
+  readingFiveHero: "assets/lectura-05-manual-de-conceptos-16x9.jpg",
   exerciseStructure: "assets/ejercicio-01-estructura.jpeg",
   exerciseDrawing: "assets/ejercicio-01-dibujo.jpeg",
   exerciseModel: "assets/ejercicio-01-maqueta.jpeg",
@@ -23,7 +25,9 @@ const ASSETS = {
   exerciseTwoPerspective: "assets/ejercicio-02-perspectiva-casa-universidad.png",
   exerciseTwoRoute: "assets/ejercicio-02-recorrido.png",
   exerciseTwoRoomPerspective: "assets/ejercicio-02-habitacion-perspectiva.png",
-  exerciseTwoRoomPlan: "assets/ejercicio-02-habitacion-planta.png"
+  exerciseTwoRoomPlan: "assets/ejercicio-02-habitacion-planta.png",
+  exerciseThreeCard: "assets/ejercicio-03-vegetales-4x3.jpg",
+  exerciseThreeHero: "assets/ejercicio-03-vegetales-16x9.jpg"
 };
 
 // Edita este bloque durante el semestre: cada objeto crea automáticamente una tarjeta y su página individual.
@@ -148,6 +152,35 @@ const content = {
         ["Funcionalidad", "capacidad de la arquitectura para responder a las necesidades cotidianas de las personas."]
       ],
       interpretation: "Considero que Arquitectura sin arquitectos nos invita a reconocer que la arquitectura no se limita al diseño de edificios realizados por profesionales, sino que también surge de la creatividad, la experiencia y las necesidades de las comunidades. Desde mi perspectiva como estudiante de arquitectura, considero importante observar cómo las construcciones tradicionales aprovechan los materiales disponibles y se adaptan al clima y al terreno. Esto demuestra que una buena solución arquitectónica no depende únicamente de la apariencia, sino también de su funcionalidad y de su relación con el contexto. Además, la lectura me permite comprender la importancia de valorar la identidad cultural de cada lugar y aprender de las técnicas constructivas tradicionales. Por ello, pienso que la arquitectura debe integrar el conocimiento técnico con las necesidades humanas, respetando tanto el entorno natural como las costumbres de quienes habitan los espacios."
+    },
+    {
+      id: "lectura-05",
+      number: "05",
+      date: "04/11/2026",
+      title: "Manual de conceptos de formas arquitectónicas",
+      author: "Edward T. White",
+      image: ASSETS.readingFiveCard,
+      heroImage: ASSETS.readingFiveHero,
+      excerpt: "Una recopilación de conceptos fundamentales para comprender y desarrollar el proceso de diseño arquitectónico.",
+      information: "El libro presenta una recopilación de conceptos fundamentales para comprender y desarrollar el proceso de diseño arquitectónico. El autor busca proporcionar un vocabulario que permita analizar, organizar y representar las ideas que surgen durante la creación de un proyecto. A lo largo del texto se desarrollan temas relacionados con el agrupamiento y la zonificación funcional, el espacio arquitectónico, la circulación y la forma del edificio, la respuesta al contexto y la envoltura del edificio. Asimismo, explica la importancia de utilizar los conceptos arquitectónicos como herramientas para tomar decisiones durante el diseño y encontrar soluciones coherentes con las necesidades del proyecto.",
+      ideas: [
+        "Los conceptos arquitectónicos funcionan como herramientas que permiten organizar y desarrollar las ideas durante el proceso de diseño.",
+        "Es importante contar con un vocabulario arquitectónico que facilite la comprensión y aplicación de los diferentes principios del diseño.",
+        "La organización y zonificación funcional permiten establecer relaciones entre los espacios de acuerdo con las actividades que se desarrollan en ellos.",
+        "El espacio arquitectónico debe analizarse teniendo en cuenta sus características, dimensiones, cualidades y posibilidades de uso.",
+        "La circulación y la forma del edificio deben relacionarse para garantizar una organización adecuada de los espacios.",
+        "El diseño arquitectónico debe considerar las condiciones del contexto y la relación del edificio con su entorno.",
+        "La envoltura del edificio constituye un elemento importante en la configuración y definición de la propuesta arquitectónica."
+      ],
+      concepts: [
+        ["Agrupamiento y zonificación funcional", "organización de los espacios de acuerdo con sus funciones, actividades y relaciones, permitiendo establecer una distribución coherente dentro del proyecto."],
+        ["Espacio arquitectónico", "lugar diseñado y organizado para desarrollar actividades humanas, teniendo en cuenta aspectos como sus dimensiones, características y cualidades espaciales."],
+        ["Circulación", "sistema de recorridos y conexiones que permite el desplazamiento de las personas entre los diferentes espacios de una edificación."],
+        ["Forma del edificio", "configuración física y geométrica de una construcción, determinada por la relación y disposición de sus elementos arquitectónicos."],
+        ["Respuesta al contexto", "relación que establece el proyecto arquitectónico con las condiciones de su entorno, considerando aspectos físicos, ambientales y sociales."],
+        ["Envoltura del edificio", "conjunto de elementos que delimitan y protegen el espacio interior de una edificación, estableciendo una relación entre el interior y el exterior."]
+      ],
+      interpretation: "Desde mi perspectiva, esta lectura permite comprender que la arquitectura va mucho más allá de crear formas visualmente atractivas, ya que cada decisión dentro de un proyecto debe tener una intención y responder a una necesidad. Considero que los conceptos presentados por el autor son fundamentales para desarrollar un pensamiento arquitectónico más organizado, porque permiten entender cómo se relacionan los espacios, cómo se distribuyen las actividades y cómo influye el entorno en el diseño. También considero importante reconocer que la forma, la función y la circulación no deben trabajarse de manera independiente, sino como elementos que se complementan para lograr una propuesta arquitectónica coherente. Como estudiante de arquitectura, esta lectura me ayuda a comprender que diseñar implica analizar, experimentar y tomar decisiones conscientes que le den sentido a cada espacio."
     }
   ],
   ejercicios: [
@@ -189,6 +222,28 @@ const content = {
         [ASSETS.exerciseTwoRoomPerspective, "Perspectiva de la habitación"],
         [ASSETS.exerciseTwoRoomPlan, "Planta de la habitación"],
         [ASSETS.exerciseTwoPerspective, "Perspectiva de la casa a la universidad"]
+      ]
+    },
+    {
+      id: "ejercicio-03",
+      number: "03",
+      date: "28/10/2026",
+      title: "El vegetal como generador de espacialidad",
+      image: ASSETS.exerciseThreeCard,
+      heroImage: ASSETS.exerciseThreeHero,
+      excerpt: "Exploración de las posibilidades formales y espaciales del pimentón, el tomate y la cebolla a partir de sus estructuras internas.",
+      sections: [
+        ["Descripción del ejercicio", [
+          "El ejercicio consistió en explorar las posibilidades formales y espaciales de diferentes vegetales a partir de sus estructuras internas. Para su desarrollo se seleccionaron tres vegetales: pimentón, tomate y cebolla, realizando cortes que permitieran reconocer sus configuraciones internas y obtener superficies para elaborar sellos e imprimir sus formas sobre una hoja de papel.",
+          "A partir de las impresiones obtenidas, se buscó identificar las geometrías, los vacíos, las texturas y las relaciones entre los elementos, interpretándolos como posibles espacios arquitectónicos."
+        ]],
+        ["Interpretación arquitectónica", [
+          "A partir de las impresiones se realizó una interpretación de las formas obtenidas, entendiendo los vacíos como espacios habitables y las partes sólidas como posibles elementos de delimitación o configuración espacial.",
+          "Se incorporó la figura humana como referencia de escala, permitiendo establecer una relación entre las dimensiones de las formas y el cuerpo humano, y comprender cómo podría experimentarse la espacialidad propuesta."
+        ]],
+        ["Reflexión personal", [
+          "Este ejercicio permitió comprender cómo elementos naturales, como los vegetales, pueden convertirse en referentes para la exploración y creación de espacios arquitectónicos. A través de sus cortes fue posible reconocer que las formas orgánicas poseen diferentes configuraciones, proporciones, texturas y vacíos que pueden reinterpretarse desde la arquitectura."
+        ]]
       ]
     }
   ],
@@ -327,9 +382,13 @@ function detail(kind, id) {
       `<dl class="concept-list">${item.concepts.map(([term, meaning]) => `<div><dt>${term}</dt><dd>${meaning}</dd></div>`).join("")}</dl>`,
       `<div class="detail-copy">${(Array.isArray(item.interpretation) ? item.interpretation : [item.interpretation]).map(paragraph => `<p>${paragraph}</p>`).join("")}</div>`
     ];
-  } else if (kind === "ejercicios" && item.objective) {
-    labels = ["Objetivo"];
-    sections = [`<p>${item.objective}</p>`];
+  } else if (kind === "ejercicios" && (item.objective || item.sections)) {
+    labels = [];
+    sections = [];
+    if (item.objective) {
+      labels.push("Objetivo");
+      sections.push(`<p>${item.objective}</p>`);
+    }
     if (item.structure) {
       labels.push("Estructura elegida");
       sections.push(`<p>${item.structure}</p>`);
@@ -341,6 +400,12 @@ function detail(kind, id) {
     if (item.manuscript) {
       labels.push("Manuscrito");
       sections.push(`<div class="detail-copy">${item.manuscript.map(paragraph => `<p>${paragraph}</p>`).join("")}</div>`);
+    }
+    if (item.sections) {
+      item.sections.forEach(([label, paragraphs]) => {
+        labels.push(label);
+        sections.push(`<div class="detail-copy">${paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("")}</div>`);
+      });
     }
     if (item.gallery) {
       labels.push(item.galleryLabel || "Registro visual");
