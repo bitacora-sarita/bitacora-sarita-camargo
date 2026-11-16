@@ -98,7 +98,7 @@ body.image-viewer-open { overflow: hidden; }
 
 .exercise-gallery { padding: 2rem var(--pad) 8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
 .exercise-card { min-height: 640px; background: var(--paper); display: grid; grid-template-rows: auto 1fr; }
-.exercise-card:nth-child(3n) { grid-column: 1 / -1; grid-template-columns: 1.35fr .65fr; grid-template-rows: 1fr; }
+.exercise-card:nth-child(3):nth-last-child(odd) { grid-column: 1 / -1; grid-template-columns: 1.35fr .65fr; grid-template-rows: 1fr; }
 .exercise-card:only-child { grid-column: 1 / -1; grid-template-columns: 1.35fr .65fr; grid-template-rows: 1fr; }
 .exercise-visual { min-height: 0; aspect-ratio: 4 / 3; overflow: hidden; position: relative; }
 .exercise-visual::after { content: attr(data-number); position: absolute; left: 1rem; top: .4rem; font: 400 clamp(5rem, 10vw, 10rem)/1 var(--serif); color: rgba(251,250,246,.82); pointer-events: none; }
@@ -183,7 +183,7 @@ body.image-viewer-open { overflow: hidden; }
   .entry-card { grid-column: span 6; }
   .entry-card:nth-child(3n) { border-right: 1px solid var(--line); }
   .entry-card:nth-child(2n) { border-right: 0; }
-  .exercise-card:nth-child(3n) { grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
+  .exercise-card:nth-child(3):nth-last-child(odd) { grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
   .exercise-card:only-child { grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
   .project-card, .project-card:nth-child(even) { grid-template-columns: 1fr; }
   .project-card:nth-child(even) .project-image { order: 0; }
@@ -208,7 +208,7 @@ body.image-viewer-open { overflow: hidden; }
   .journey-card { min-height: 230px; border-right: 0; border-bottom: 1px solid var(--line); }
   .entry-card { grid-column: span 12; border-right: 0 !important; }
   .exercise-card { min-height: 520px; }
-  .exercise-card:nth-child(3n) { grid-column: auto; }
+  .exercise-card:nth-child(3):nth-last-child(odd) { grid-column: auto; }
   .project-card { min-height: 570px; }
   .project-image { min-height: 350px; }
   .detail-body { grid-template-columns: 1fr; }
