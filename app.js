@@ -27,7 +27,10 @@ const ASSETS = {
   exerciseTwoRoomPerspective: "assets/ejercicio-02-habitacion-perspectiva.png",
   exerciseTwoRoomPlan: "assets/ejercicio-02-habitacion-planta.png",
   exerciseThreeCard: "assets/ejercicio-03-vegetales-4x3.jpg",
-  exerciseThreeHero: "assets/ejercicio-03-vegetales-16x9.jpg"
+  exerciseThreeHero: "assets/ejercicio-03-vegetales-16x9.jpg",
+  exerciseFourCard: "assets/ejercicio-04-maqueta-4x3.jpg",
+  exerciseFourHero: "assets/ejercicio-04-maqueta-16x9.jpg",
+  exerciseFourPhotos: [1, 2, 3, 4, 5, 6].map(n => `assets/ejercicio-04-fotografia-0${n}.jpg`)
 };
 
 // Edita este bloque durante el semestre: cada objeto crea automáticamente una tarjeta y su página individual.
@@ -245,6 +248,22 @@ const content = {
           "Este ejercicio permitió comprender cómo elementos naturales, como los vegetales, pueden convertirse en referentes para la exploración y creación de espacios arquitectónicos. A través de sus cortes fue posible reconocer que las formas orgánicas poseen diferentes configuraciones, proporciones, texturas y vacíos que pueden reinterpretarse desde la arquitectura."
         ]]
       ]
+    },
+    {
+      id: "ejercicio-04",
+      number: "04",
+      date: "04/11/2026",
+      title: "Exploración fotográfica de la maqueta de taller 1 como herramienta arquitectónica",
+      image: ASSETS.exerciseFourCard,
+      heroImage: ASSETS.exerciseFourHero,
+      excerpt: "Representación y análisis de la maqueta a través de diferentes encuadres, perspectivas, luces y sombras.",
+      sections: [
+        ["Descripción del ejercicio", [
+          "Esta exploración fotográfica tiene como propósito representar y analizar la maqueta a través de diferentes encuadres y perspectivas. Mediante el manejo de la luz, las sombras y los contrastes, se busca destacar los volúmenes, las formas y las relaciones espaciales que componen la propuesta. A través de cada fotografía, es posible descubrir nuevos detalles y maneras de interpretar el espacio, comprendiendo cómo la composición puede generar diferentes sensaciones visuales y arquitectónicas."
+        ]]
+      ],
+      galleryLabel: "Evidencias",
+      gallery: ASSETS.exerciseFourPhotos.map((photo, index) => [photo, `Fotografía ${index + 1}`])
     }
   ],
   trabajos: [
