@@ -291,7 +291,8 @@ const content = {
         ["Reflexión final", [
           "Personalmente, considero que la obra de Theo Jansen nos demuestra que la arquitectura no debe limitarse solamente a diseñar edificios que sean visualmente atractivos, sino que también debe explorar nuevas posibilidades a través de la creatividad, la ciencia y la tecnología. Me parece interesante cómo, a partir de elementos simples, se pueden crear estructuras complejas capaces de moverse y relacionarse con la naturaleza. Esto me hace pensar que, como futuros arquitectos, debemos aprender a observar nuestro entorno y encontrar formas innovadoras de aprovechar los recursos naturales para crear espacios que no solo sean estéticos, sino también funcionales y sostenibles."
         ]]
-      ]
+      ],
+      video: { id: "gYS0fhFI4AU", title: "Theo Jansen y sus «bestias de la playa» | Euromaxx", source: "DW Español" }
     }
   ],
   trabajos: [
@@ -453,6 +454,10 @@ function detail(kind, id) {
         labels.push(label);
         sections.push(`<div class="detail-copy">${paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("")}</div>`);
       });
+    }
+    if (item.video) {
+      labels.push(item.videoLabel || "Evidencias");
+      sections.push(`<figure class="video-figure"><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/${item.video.id}" title="${item.video.title}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption>${item.video.title} · ${item.video.source} · <a href="https://youtu.be/${item.video.id}" target="_blank" rel="noopener">Ver en YouTube</a></figcaption></figure>`);
     }
     if (item.gallery) {
       labels.push(item.galleryLabel || "Registro visual");
