@@ -30,7 +30,9 @@ const ASSETS = {
   exerciseThreeHero: "assets/ejercicio-03-vegetales-16x9.jpg",
   exerciseFourCard: "assets/ejercicio-04-maqueta-4x3.jpg",
   exerciseFourHero: "assets/ejercicio-04-maqueta-16x9.jpg",
-  exerciseFourPhotos: [1, 2, 3, 4, 5, 6].map(n => `assets/ejercicio-04-fotografia-0${n}.jpg`)
+  exerciseFourPhotos: [1, 2, 3, 4, 5, 6].map(n => `assets/ejercicio-04-fotografia-0${n}.jpg`),
+  exerciseFiveCard: "assets/ejercicio-05-theo-jansen-4x3.jpg",
+  exerciseFiveHero: "assets/ejercicio-05-theo-jansen-16x9.jpg"
 };
 
 // Edita este bloque durante el semestre: cada objeto crea automáticamente una tarjeta y su página individual.
@@ -264,6 +266,32 @@ const content = {
       ],
       galleryLabel: "Evidencias",
       gallery: ASSETS.exerciseFourPhotos.map((photo, index) => [photo, `Fotografía ${index + 1}`])
+    },
+    {
+      id: "ejercicio-05",
+      number: "05",
+      date: "11/11/2026",
+      title: "Reflexión sobre la obra de Theo Jansen",
+      image: ASSETS.exerciseFiveCard,
+      heroImage: ASSETS.exerciseFiveHero,
+      excerpt: "Reflexión sobre las «Bestias de la playa» de Theo Jansen y su relación con la arquitectura y la tecnología.",
+      sections: [
+        ["¿Qué nos enseña el video?", [
+          "El video nos enseña que la creatividad y la ciencia pueden trabajar juntas para crear cosas extraordinarias. Theo Jansen demuestra que es posible construir estructuras capaces de moverse por sí mismas utilizando materiales sencillos, como tubos de plástico, y aprovechando la fuerza del viento.",
+          "Sus creaciones, conocidas como “Bestias de la playa”, nos hacen reflexionar sobre cómo podemos observar la naturaleza e inspirarnos en ella para desarrollar nuevas ideas. También nos enseñan que la innovación no depende únicamente de la tecnología avanzada, sino de la imaginación, la experimentación y el conocimiento."
+        ]],
+        ["¿Se puede relacionar con la arquitectura?", [
+          "Sí, porque tanto la obra de Theo Jansen como la arquitectura buscan crear estructuras que tengan una función y respondan a su entorno. Sus mecanismos nos permiten entender la importancia de la geometría, las proporciones, el equilibrio y la estabilidad.",
+          "Además, sus obras demuestran cómo una estructura puede adaptarse a las condiciones del ambiente, algo que también se tiene en cuenta al diseñar edificios, especialmente al aprovechar factores naturales como el viento, la luz y el movimiento del entorno."
+        ]],
+        ["¿Cuál sería la relación entre arquitectura y tecnología?", [
+          "La relación entre arquitectura y tecnología está en cómo ambas se complementan para encontrar nuevas soluciones a las necesidades humanas. La tecnología permite experimentar con nuevos materiales, herramientas y sistemas constructivos que hacen posible crear espacios más eficientes, resistentes y sostenibles.",
+          "La obra de Theo Jansen es un ejemplo de cómo el conocimiento científico y tecnológico puede convertirse en una creación funcional. De la misma manera, en la arquitectura se pueden utilizar mecanismos, automatización y energías naturales para diseñar edificios que aprovechen mejor los recursos y se adapten a su entorno."
+        ]],
+        ["Reflexión final", [
+          "Personalmente, considero que la obra de Theo Jansen nos demuestra que la arquitectura no debe limitarse solamente a diseñar edificios que sean visualmente atractivos, sino que también debe explorar nuevas posibilidades a través de la creatividad, la ciencia y la tecnología. Me parece interesante cómo, a partir de elementos simples, se pueden crear estructuras complejas capaces de moverse y relacionarse con la naturaleza. Esto me hace pensar que, como futuros arquitectos, debemos aprender a observar nuestro entorno y encontrar formas innovadoras de aprovechar los recursos naturales para crear espacios que no solo sean estéticos, sino también funcionales y sostenibles."
+        ]]
+      ]
     }
   ],
   trabajos: [
