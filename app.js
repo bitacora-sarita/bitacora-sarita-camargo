@@ -14,6 +14,9 @@ const ASSETS = {
   readingFourHero: "assets/lectura-04-arquitectura-sin-arquitectos-16x9.png",
   readingFiveCard: "assets/lectura-05-manual-de-conceptos-4x3.jpg",
   readingFiveHero: "assets/lectura-05-manual-de-conceptos-16x9.jpg",
+  readingSixCard: "assets/lectura-06-casa-farnsworth-4x3.png",
+  readingSixHero: "assets/lectura-06-casa-farnsworth-16x9.png",
+  readingSixSupport: "assets/lectura-06-casa-farnsworth-apoyo.jpg",
   exerciseStructure: "assets/ejercicio-01-estructura.jpeg",
   exerciseDrawing: "assets/ejercicio-01-dibujo.jpeg",
   exerciseModel: "assets/ejercicio-01-maqueta.jpeg",
@@ -186,6 +189,39 @@ const content = {
         ["Envoltura del edificio", "conjunto de elementos que delimitan y protegen el espacio interior de una edificación, estableciendo una relación entre el interior y el exterior."]
       ],
       interpretation: "Desde mi perspectiva, esta lectura permite comprender que la arquitectura va mucho más allá de crear formas visualmente atractivas, ya que cada decisión dentro de un proyecto debe tener una intención y responder a una necesidad. Considero que los conceptos presentados por el autor son fundamentales para desarrollar un pensamiento arquitectónico más organizado, porque permiten entender cómo se relacionan los espacios, cómo se distribuyen las actividades y cómo influye el entorno en el diseño. También considero importante reconocer que la forma, la función y la circulación no deben trabajarse de manera independiente, sino como elementos que se complementan para lograr una propuesta arquitectónica coherente. Como estudiante de arquitectura, esta lectura me ayuda a comprender que diseñar implica analizar, experimentar y tomar decisiones conscientes que le den sentido a cada espacio."
+    },
+    {
+      id: "lectura-06",
+      number: "06",
+      date: "11/11/2026",
+      title: "Casa Farnsworth de Mies van der Rohe",
+      author: "Entrevista a Ramón Esteve",
+      image: ASSETS.readingSixCard,
+      heroImage: ASSETS.readingSixHero,
+      excerpt: "La importancia arquitectónica de la Casa Farnsworth y el debate entre la belleza y la habitabilidad.",
+      information: "El texto analiza la importancia arquitectónica de la Casa Farnsworth, diseñada por Ludwig Mies van der Rohe, y su influencia en la arquitectura moderna. A través de una entrevista al arquitecto Ramón Esteve, se explica cómo esta vivienda se convirtió en un referente por su transparencia, su organización espacial, el uso de estructuras metálicas y su conexión con la naturaleza. También se aborda el debate entre la belleza y la habitabilidad, debido a que, aunque la casa tiene un gran valor arquitectónico, presentó problemas de comodidad, privacidad, temperatura e inundaciones.",
+      ideas: [
+        "La Casa Farnsworth es una de las obras más representativas e influyentes de la arquitectura del siglo XX.",
+        "Su diseño se caracteriza por la transparencia, los grandes paneles de vidrio y una estructura metálica que permite crear espacios abiertos.",
+        "La vivienda establece una conexión directa entre los espacios interiores y la naturaleza.",
+        "La belleza arquitectónica no siempre garantiza la comodidad y funcionalidad de una vivienda.",
+        "La organización espacial busca reducir las divisiones tradicionales y generar continuidad entre los diferentes ambientes.",
+        "Los avances tecnológicos actuales permiten solucionar muchos de los problemas que presentó esta construcción.",
+        "La Casa Farnsworth demuestra que una obra puede tener imperfecciones como vivienda y, aun así, realizar grandes aportes a la arquitectura."
+      ],
+      concepts: [
+        ["Transparencia arquitectónica", "uso de materiales como el vidrio para permitir la entrada de luz y generar una conexión visual entre el interior y el exterior."],
+        ["Organización espacial", "forma en que se distribuyen y relacionan los diferentes espacios dentro de una construcción, de acuerdo con sus usos y funciones."],
+        ["Steel frame (estructura metálica)", "sistema constructivo que utiliza elementos de acero para soportar una edificación y permitir espacios amplios con menos divisiones."],
+        ["Habitabilidad", "condiciones que debe tener un espacio para garantizar la comodidad, seguridad y bienestar de las personas que lo utilizan."],
+        ["Integración con la naturaleza", "relación entre la arquitectura y el entorno natural, buscando conectar la vivienda con el paisaje mediante la visual, la iluminación y la continuidad espacial."],
+        ["Unidad espacial", "concepto que busca generar continuidad entre los ambientes, evitando divisiones innecesarias y permitiendo que los espacios se relacionen entre sí."]
+      ],
+      interpretation: [
+        "Para mí, la lectura muestra que la arquitectura no consiste solamente en diseñar construcciones visualmente atractivas, sino también en crear espacios que respondan a las necesidades de quienes los habitan. La Casa Farnsworth es un ejemplo de cómo una idea innovadora puede transformar la manera de entender la arquitectura, especialmente por su transparencia, sus espacios abiertos y su relación con la naturaleza.",
+        "Sin embargo, también permite comprender que la belleza y la funcionalidad deben trabajar juntas, porque una vivienda no solo debe ser contemplada, sino que debe ofrecer condiciones adecuadas para vivir. Considero que su mayor enseñanza es que no debemos copiar las formas de las grandes obras arquitectónicas, sino comprender sus ideas y aplicarlas de manera responsable en nuestros propios diseños."
+      ],
+      support: [[ASSETS.readingSixSupport, "Casa Farnsworth, de Ludwig Mies van der Rohe"]]
     }
   ],
   ejercicios: [
@@ -430,6 +466,10 @@ function detail(kind, id) {
       `<dl class="concept-list">${item.concepts.map(([term, meaning]) => `<div><dt>${term}</dt><dd>${meaning}</dd></div>`).join("")}</dl>`,
       `<div class="detail-copy">${(Array.isArray(item.interpretation) ? item.interpretation : [item.interpretation]).map(paragraph => `<p>${paragraph}</p>`).join("")}</div>`
     ];
+    if (item.support) {
+      labels.push(item.supportLabel || "Imagen de apoyo");
+      sections.push(item.support.map(([image, caption]) => `<figure class="support-figure"><img src="${image}" alt="${caption}"/><figcaption>${caption}</figcaption></figure>`).join(""));
+    }
   } else if (kind === "ejercicios" && (item.objective || item.sections)) {
     labels = [];
     sections = [];
